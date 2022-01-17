@@ -63,13 +63,14 @@ public class UserRegistration {
      * Password of length 8
      * should have at least 1 CAPS
      * should have at least 1 NUMBER
+     * should have exact 1 special character
      * @param password
      * @return
      */
     public boolean isValidPassword(String password) {
-        String regex = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[0-9a-zA-Z@#$%_!^&*]{8,}";
+        String regex = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]*[@#$%_!^&*][0-9a-zA-Z]*";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(password);
-        return m.matches();
+        return m.matches() && password.length() > 7;
     }
 }
