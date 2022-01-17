@@ -31,6 +31,9 @@ public class UserRegistrationMain {
             case ("Email"):
                 valid = user.isValidEmail(input.getString()); // takes input and validates email
                 break;
+            case ("Phone Number"):
+                valid = user.isValidPhoneNumber(input.getString()); // takes input and validates phone number
+                break;
         }
         if (valid == true) {
             System.out.println("Valid " + check); // Displays valid message
@@ -53,6 +56,7 @@ public class UserRegistrationMain {
             System.out.println("1 : to validate First Name ");
             System.out.println("2 : to validate Last Name ");
             System.out.println("3 : to validate Email ");
+            System.out.println("4 : to validate Phone Number ");
             System.out.println("Other number to quit.");
 
             switch (input.getInt()) {
@@ -64,6 +68,9 @@ public class UserRegistrationMain {
                     break;
                 case 3:
                     isValid("Email");
+                    break;
+                case 4:
+                    isValid("Phone Number");
                     break;
                 default:
                     exit(0);

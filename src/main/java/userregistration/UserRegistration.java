@@ -30,4 +30,11 @@ public class UserRegistration {
         Matcher m = p.matcher(email);
         return m.matches();
     }
+    public boolean isValidPhoneNumber(String number) {
+        String regex = "^[0-9]{2}\\s{1}[0-9]{10}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(number);
+        return m.matches();
+    }
+
 }
