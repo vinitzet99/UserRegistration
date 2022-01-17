@@ -58,8 +58,15 @@ public class UserRegistration {
         return m.matches();
     }
 
+    /**
+     * Validate Password
+     * Password of length 8
+     * should have at least 1 CAPS
+     * @param password
+     * @return
+     */
     public boolean isValidPassword(String password) {
-        String regex = "[0-9a-zA-Z@#$%_!^&*]{8,}";
+        String regex = "(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z@#$%_!^&*]{8,}";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(password);
         return m.matches();
