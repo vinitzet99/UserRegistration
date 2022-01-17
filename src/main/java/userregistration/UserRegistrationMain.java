@@ -28,6 +28,9 @@ public class UserRegistrationMain {
             case ("Last Name"):
                 valid = user.isValidName(input.getString()); // takes input and validates name
                 break;
+            case ("Email"):
+                valid = user.isValidEmail(input.getString()); // takes input and validates email
+                break;
         }
         if (valid == true) {
             System.out.println("Valid " + check); // Displays valid message
@@ -39,6 +42,7 @@ public class UserRegistrationMain {
     public static void welcome() {
         System.out.println("Welcome to User Registration System Problem");
     }
+
     /**
      * Displays welcome message and menu
      * Based on user input, calls valid method with field to check till quit
@@ -48,6 +52,7 @@ public class UserRegistrationMain {
         while (true) {
             System.out.println("1 : to validate First Name ");
             System.out.println("2 : to validate Last Name ");
+            System.out.println("3 : to validate Email ");
             System.out.println("Other number to quit.");
 
             switch (input.getInt()) {
@@ -56,6 +61,9 @@ public class UserRegistrationMain {
                     break;
                 case 2:
                     isValid("Last Name");
+                    break;
+                case 3:
+                    isValid("Email");
                     break;
                 default:
                     exit(0);
