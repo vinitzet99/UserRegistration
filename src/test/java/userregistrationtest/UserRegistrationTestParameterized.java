@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.junit.runners.Parameterized;
 import org.junit.runner.RunWith;
 import userregistration.UserRegistration;
+import userregistration.UserRegistrationException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,6 +57,7 @@ public class UserRegistrationTestParameterized {
                         {"abc@abc@gmail.com", false},
                         {"abc@gmail.com.1a", false},
                         {"abc@gmail.com.aa.au", false},
+                        {"","Invalid Input"}
                 }
         );
     }
@@ -84,7 +86,7 @@ public class UserRegistrationTestParameterized {
      * asserts expected value
      */
     @Test
-    public void testEmail() {
+    public void testEmail() throws UserRegistrationException {
         System.out.println("Email is: " + email + " "+expectedResult);
         assertEquals(expectedResult, userRegistration.isValidEmail(email));
     }

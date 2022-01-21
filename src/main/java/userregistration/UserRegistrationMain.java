@@ -20,7 +20,7 @@ public class UserRegistrationMain {
      *
      * @param check
      */
-    public static void isValid(String check) {
+    public static void isValid(String check) throws UserRegistrationException {
         System.out.println("Enter " + check + ": "); //Displays field to input
         boolean valid = false; // variable
         switch (check) {    //calls function to validate
@@ -53,7 +53,7 @@ public class UserRegistrationMain {
      * Displays welcome message and menu
      * Based on user input, calls valid method with field to check till quit
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationException {
         welcome();
         while (true) {
             System.out.println("1 : to validate First Name ");
